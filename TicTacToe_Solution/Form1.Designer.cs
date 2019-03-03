@@ -59,6 +59,7 @@
             this.tbPlayer1 = new System.Windows.Forms.TextBox();
             this.first_pannel = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.lmark = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.player_pannel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -141,6 +142,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.panel3.Controls.Add(this.lmark);
             this.panel3.Controls.Add(this.lPlayerCur);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lMaxPoints);
@@ -455,6 +457,17 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Aspettando le opzioni...";
             // 
+            // lmark
+            // 
+            this.lmark.AutoSize = true;
+            this.lmark.Font = new System.Drawing.Font("Nirmala UI", 11F);
+            this.lmark.ForeColor = System.Drawing.Color.White;
+            this.lmark.Location = new System.Drawing.Point(413, 118);
+            this.lmark.Name = "lmark";
+            this.lmark.Size = new System.Drawing.Size(18, 20);
+            this.lmark.TabIndex = 6;
+            this.lmark.Text = "X";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,6 +527,7 @@
         private System.Windows.Forms.Label lMaxPoints;
         private System.Windows.Forms.Label lPlayerCur;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lmark;
     }
 }
 

@@ -201,15 +201,19 @@ namespace TicTacToe_Solution
                 player++;
                 lPlayerCur.Text = Players.player1;
                 mark = "X";
+                lmark.Text = "X";
                 color = Color.Goldenrod;
-                
+                lmark.ForeColor = color;
+
             }
             else if (player == 2)
             {
                 player--;
                 lPlayerCur.Text = Players.player2;
                 mark = "O";
+                lmark.Text = "O";
                 color = Color.MediumSeaGreen;
+                lmark.ForeColor = color;
             }
             return player;
         }
@@ -269,22 +273,35 @@ namespace TicTacToe_Solution
                 {
                     if (player == 1)
                     {
-                        player++;
-                        MessageBox.Show("Il giocatore " + Players.player1 + " ha vinto la partita", "STATO PARTITA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        lPlayer1.Text = Players.player1 + ": " + (Players.p1_points + 1);
+                        
+                        MessageBox.Show("Il giocatore " + Players.player1 + " ha vinto il round", "STATO PARTITA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Players.p1_points += 1;
+                        lPlayer1.Text = Players.player1 + ": " + Players.p1_points;
                         reset();
                     }
                     else if (player == 2)
                     {
-                        player--;
-                        MessageBox.Show("Il giocatore " + Players.player2 + " ha vinto la partita", "STATO PARTITA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        lPlayer2.Text = Players.player2 + ": " + (Players.p2_points + 1);
+                        
+                        MessageBox.Show("Il giocatore " + Players.player2 + " ha vinto il round", "STATO PARTITA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Players.p2_points += 1;
+                        lPlayer2.Text = Players.player2 + ": " + Players.p2_points;
                         reset();
                     }
+
+                    if (Players.max_points == Players.p1_points)
+                    {
+                        MessageBox.Show("Il giocatore " + Players.player1 + " ha vinto la partita", "STATO PARTITA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (Players.max_points == Players.p2_points)
+                    {
+                        MessageBox.Show("Il giocatore " + Players.player2 + " ha vinto la partita", "STATO PARTITA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                 }
                 else
                 {
                     MessageBox.Show("Parità", "STATO PARTITA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    reset();
                 }
             }
         }
